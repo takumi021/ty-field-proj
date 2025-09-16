@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Poonam Paints Wholesale</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet">
+    <!-- Add Material Icons CDN -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="dashboard-page-body">
+    <header class="dashboard-header">
+        <h1 class="logo-title">Poonam Paints</h1>
+        <button id="logout-button" class="logout-button">Logout</button>
+    </header>
+
+    <main class="dashboard-main">
+        <h2 class="welcome-title">Welcome, [Company Name]!</h2>
+
+        <section class="actions-grid">
+            <!-- Wholesale cards -->
+            <div class="action-card wholesale-card">
+                <span class="material-icon">business_center</span>
+                <h3>Place New Order</h3>
+                <p>Browse products and create a new bulk order.</p>
+                <a href="#" class="card-button">Start Order</a>
+            </div>
+            <div class="action-card wholesale-card">
+                <span class="material-icon">history</span>
+                <h3>View Order History</h3>
+                <p>Check the status of your past and current orders.</p>
+                <a href="#" class="card-button">View History</a>
+            </div>
+        </section>
+
+        <h3 class="section-title retail-title">Retail Services</h3>
+        <section class="actions-grid retail-grid">
+            <div class="action-card retail-card gradient-bg">
+                <span class="material-icon">palette</span>
+                <h3>Colour Picker</h3>
+                <p>Find the perfect shade for your home or project.</p>
+                <a href="#" class="card-button">Pick a Colour</a>
+            </div>
+            <div class="action-card retail-card gradient-bg">
+                <span class="material-icon">star_rate</span>
+                <h3>Recommendations</h3>
+                <p>Get product suggestions based on your needs.</p>
+                <a href="#" class="card-button">Get Recommendations</a>
+            </div>
+            <div class="action-card retail-card gradient-bg">
+                <span class="material-icon">shopping_cart</span>
+                <h3>Retail Order</h3>
+                <p>Order paints directly for retail customers.</p>
+                <a href="#" class="card-button">Order Now</a>
+            </div>
+        </section>
+
+        <section class="recent-orders">
+            <h3>Recent Orders</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#PP-1054</td>
+                        <td>2025-09-15</td>
+                        <td>₹85,400.00</td>
+                        <td>Shipped</td>
+                    </tr>
+                    <tr>
+                        <td>#PP-1051</td>
+                        <td>2025-09-11</td>
+                        <td>₹12,350.00</td>
+                        <td>Delivered</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

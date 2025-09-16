@@ -1,0 +1,279 @@
+/* ---- M3 Expressive Theme Setup ---- */
+:root {
+    --primary-color: #4A5C98; /* A nice deep blue */
+    --secondary-color: #E8DEF8; /* A light lavender */
+    --surface-color: #FEF7FF; /* Off-white surface */
+    --on-surface-color: #1D1B20; /* Dark text */
+    --card-color: #FFFFFF;
+    --font-family: 'Manrope', sans-serif;
+}
+
+/* ---- Body Styles (The Fix) ---- */
+
+/* This style is ONLY for the login page to center the form */
+.login-page-body {
+    font-family: var(--font-family);
+    background-color: var(--surface-color);
+    color: var(--on-surface-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* This style is for the dashboard and future pages with a normal layout */
+.dashboard-page-body {
+    font-family: var(--font-family);
+    background-color: var(--surface-color);
+    color: var(--on-surface-color);
+    margin: 0; /* Resets default margin */
+}
+
+
+/* ---- Login Page Styles ---- */
+.login-container {
+    padding: 20px;
+}
+
+.login-card {
+    background-color: var(--card-color);
+    padding: 40px 30px;
+    border-radius: 28px; /* Key for the M3 shape! */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+}
+
+.logo-title {
+    font-weight: 800;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.page-title {
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin: 4px 0 32px 0;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 16px; /* A softer corner for inputs */
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.input-group input:focus {
+    outline: 2px solid var(--primary-color);
+    border-color: transparent;
+}
+
+.login-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 24px; /* Rounded button */
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: transform 0.2s ease;
+}
+
+.login-button:hover {
+    transform: scale(1.03);
+}
+
+
+/* ---- Dashboard Styles ---- */
+
+/* ---- Header ---- */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: var(--card-color);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logout-button {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.logout-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+
+/* ---- Main Content ---- */
+.dashboard-main {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.welcome-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+/* ---- Action Cards ---- */
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.action-card {
+    background-color: var(--card-color);
+    padding: 30px;
+    border-radius: 28px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.action-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 32px rgba(76,175,80,0.12), 0 2px 8px rgba(124,77,255,0.08);
+    border-color: #4A5C98;
+}
+
+.action-card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.action-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.card-button {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+/* ---- Recent Orders Table ---- */
+.recent-orders h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-color);
+    border-radius: 16px;
+    overflow: hidden; /* Important for border-radius on tables */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+th, td {
+    padding: 16px;
+    text-align: left;
+}
+
+thead {
+    background-color: #f9f6ff; /* A very light version of our surface color */
+}
+
+tbody tr {
+    border-bottom: 1px solid #eee;
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 48px 0 24px 0;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+}
+.retail-title {
+    color: #7C4DFF; /* Material Deep Purple Accent */
+}
+
+/* Retail Grid */
+.retail-grid {
+    background: linear-gradient(90deg, #E3F2FD 0%, #F3E5F5 100%);
+    border-radius: 24px;
+    padding: 24px 0;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 16px rgba(124,77,255,0.08);
+}
+
+/* Gradient backgrounds for retail cards */
+.gradient-bg {
+    background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%);
+    border: 1px solid #CE93D8;
+}
+
+/* Wholesale cards accent */
+.wholesale-card {
+    border-left: 6px solid var(--primary-color);
+}
+
+/* Retail cards accent */
+.retail-card {
+    border-left: 6px solid #7C4DFF;
+}
+
+/* Material Icons */
+.material-icon {
+    font-family: 'Material Icons';
+    font-size: 2.2rem;
+    color: #7C4DFF;
+    display: block;
+    margin-bottom: 12px;
+    transition: color 0.2s;
+}
+
+/* Card hover effects */
+.action-card:hover .material-icon {
+    color: #4A5C98;
+}
