@@ -23,4 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // alert('Login functionality is not yet implemented.');
     });
 
+    document.getElementById('demo-login').addEventListener('click', function() {
+        window.location.href = 'dashboard.html';
+    });
+
 });
