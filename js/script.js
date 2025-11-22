@@ -1,30 +1,32 @@
-// Wait for the document to be fully loaded before running the script
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // Get the form element from the page
     const loginForm = document.getElementById('login-form');
 
-    // Add an event listener for the 'submit' event
-    loginForm.addEventListener('submit', (event) => {
-        // Prevent the default form submission behavior (which reloads the page)
+    loginForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        // Get the values from the input fields
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
 
-        // For your project, you would send this data to your backend server.
-        // For now, we'll just log it to the browser's developer console.
-        console.log('Login attempt with:');
-        console.log('Email:', email);
-        console.log('Password:', password);
+        try {
+            // Send data to your Node.js server
+            const response = await fetch('http://localhost:3000/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
 
-        // You could add a message to the user here, e.g.,
-        // alert('Login functionality is not yet implemented.');
+            const data = await response.json();
+
+            if (data.success) {
+                // Save user info to browser session so we remember them
+                sessionStorage.setItem('user', JSON.stringify(data.user));
+                window.location.href = 'dashboard.html';
+            } else {
+                alert('Login failed: ' + data.message);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Server error. Is the backend running?');
+        }
     });
-
-    document.getElementById('demo-login').addEventListener('click', function() {
-        window.location.href = 'dashboard.html';
-    });
-
 });
